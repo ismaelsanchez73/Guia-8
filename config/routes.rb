@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  # Define la ruta raíz para que apunte a la acción home del StaticPagesController
+  root "static_pages#home"  # Esta es la línea que necesitas agregar
+
   get "static_pages/home"
   get "static_pages/help"
-  get 'static_pages/about'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "static_pages/about"
+  get "static_pages/contact"
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
